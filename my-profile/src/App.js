@@ -31,8 +31,9 @@ function App() {
           </Center>
           <ProfileAvatar />
         </Box>
-        <Contact></Contact>
         <Footer />
+        <br />
+        <Contact></Contact>
       </Container>
     </div>
   );

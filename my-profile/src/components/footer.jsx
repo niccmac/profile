@@ -17,16 +17,6 @@ import CardGame from "./cardGame";
 import Email from "./email";
 
 export default function Footer() {
-  const items = [
-    {
-      title: "Focal Project",
-      link: "https://www.focal-project.ca/",
-      link2: "focal_pres_original.mp4",
-      icon: "AiFillProject",
-      text: "This is a group project that I worked on during my diploma in Web Development at Lighthouse Labs. This project management app was created in to weeks and has plenty of exciting features to explore!",
-    },
-  ];
-
   return (
     <>
       <Container
