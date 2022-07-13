@@ -7,6 +7,8 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+import GameProvider from "../providers/cardProvider";
+import CardGame from "./cardGame";
 
 export default function Footer() {
   const items = [
@@ -52,6 +54,21 @@ export default function Footer() {
             </AccordionItem>
           );
         })}
+        <AccordionItem key={"game"}>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Game{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <GameProvider>
+              <CardGame></CardGame>
+            </GameProvider>
+          </AccordionPanel>
+        </AccordionItem>
       </Accordion>
     </>
   );
