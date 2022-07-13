@@ -12,7 +12,7 @@ import {
   AlertDescription,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import Notification from "./notification";
+// Send button colours
 // TODO get tool tip working. Appears after alert
 export default function Email() {
   const form = useRef();
