@@ -8,10 +8,16 @@ export default function Email() {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("gmail", "template_5y7ujur", form.current, "HZXpU8rFzP1qacpqK")
+      .sendForm(
+        "service_ll4uldf",
+        "template_5y7ujur",
+        form.current,
+        "HZXpU8rFzP1qacpqK"
+      )
       .then(
         (result) => {
           console.log(result.text);
+          e.target.reset();
         },
         (error) => {
           console.log(error.text);
@@ -29,6 +35,7 @@ export default function Email() {
           focusBorderColor="brand.900"
           errorBorderColor="red.500"
           isRequired
+          name="name"
         />
         <Input
           placeholder="Your email"
@@ -36,6 +43,7 @@ export default function Email() {
           focusBorderColor="brand.900"
           errorBorderColor="red.500"
           isRequired
+          name="email"
         />
         <Textarea
           placeholder="Write your message here!"
@@ -43,6 +51,7 @@ export default function Email() {
           focusBorderColor="brand.900"
           errorBorderColor="red.500"
           isRequired
+          name="message"
         />
         <Tooltip
           label="Send your message to my email address - nicole.mac0404@gmail.com"
