@@ -1,6 +1,6 @@
 import { Button, Grid, Box } from "@chakra-ui/react";
 import React, { useContext } from "react";
-import FontAwesomeIcon from "@fortawesome/fontawesome-svg-core";
+// import FontAwesomeIcon from "@fortawesome/fontawesome-svg-core";
 import { gameContext } from "../providers/cardProvider";
 
 const CardList = () => {
@@ -23,7 +23,7 @@ const CardList = () => {
             return (
               <Grid item md={4} key={card.id}>
                 <Box>
-                  <FontAwesomeIcon
+                  {/* <FontAwesomeIcon
                     key={card}
                     isinactive={"false"}
                     isflipped={checkFlipped(card.id)}
@@ -32,7 +32,7 @@ const CardList = () => {
                     onClick={(event) =>
                       handleCardClick(event, card.id, card.icon)
                     }
-                  />
+                  /> */}
                 </Box>
               </Grid>
             );

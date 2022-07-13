@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import GameProvider from "../providers/cardProvider";
 import CardGame from "./cardGame";
+import Email from "./email";
 
 export default function Footer() {
   const items = [
@@ -23,7 +24,12 @@ export default function Footer() {
 
   return (
     <>
-      <Accordion allowToggle w="100%" h="80%" backgroundColor=" #d7ccc8">
+      <Accordion
+        allowToggle
+        w="100%"
+        h="max-content"
+        backgroundColor=" #d7ccc8"
+      >
         {items.map((item, index) => {
           return (
             <AccordionItem key={index}>
@@ -37,7 +43,7 @@ export default function Footer() {
               </h2>
               <AccordionPanel pb={4}>
                 <a href={item.link} target="	_blank">
-                  {item.title}
+                  Link to {item.title}
                 </a>
                 {item.link2 ? (
                   <video width="320" height="240" controls>
@@ -64,9 +70,20 @@ export default function Footer() {
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            <GameProvider>
-              <CardGame></CardGame>
-            </GameProvider>
+            <GameProvider>{/* <CardGame></CardGame> */}</GameProvider>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem key={"email"}>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Email{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <Email></Email>
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
