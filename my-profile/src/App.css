@@ -56,3 +56,9 @@
   position: relative;
   left: 30px;
 }
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(158, 156, 156);
+  opacity: 1; /* Firefox */
+}

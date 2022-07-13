@@ -1,10 +1,6 @@
 import CardList from "./cardGameList";
 
 const CardGame = () => {
-  return (
-    <>
-      <CardList />
-    </>
-  );
+  return <>{/* <CardList /> */}</>;
 };
 export default CardGame;
