@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { FaGitSquare, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
+
+// TODO make email copy instead of link
 import { MdEmail } from "react-icons/md";
 export default function Contact() {
   return (
