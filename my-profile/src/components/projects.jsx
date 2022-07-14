@@ -33,10 +33,9 @@ export default function Projects() {
         <Text fontSize="sm">Current projects.</Text>
         {/* <Text fontSize="md">Come take a look at my work.</Text> */}
       </Center>
-
       <Container
         w="100%"
-        h="max-content"
+        h="25%"
         display="flex"
         justifyContent="space-evenly"
         alignItems="center"
@@ -50,14 +49,13 @@ export default function Projects() {
           size="xs"
           marginLeft="4%"
           marginTop="2%"
-          marginBottom="2%"
         >
           <a href="https://www.focal-project.ca/" target="	_blank">
             Focal
           </a>
         </Badge>
 
-        <Text align="start" marginLeft="4%" marginRight="4%" marginBottom="2%">
+        <Text align="start" marginLeft="4%" marginRight="4%">
           This is project management app. There is a link right here to see the
           &nbsp;
           <a href="https://www.focal-project.ca/" target="	_blank">
@@ -68,7 +66,7 @@ export default function Projects() {
 
         <Accordion
           allowToggle
-          h="max-content"
+          h="25%"
           borderColor="transparent"
           marginLeft="4%"
           marginRight="4%"
@@ -105,13 +103,13 @@ export default function Projects() {
         </Accordion>
       </Container>
 
-      <Stack direction="row" h="150px" p={4} backgroundColor=" #d7ccc8">
-        <Divider orientation="vertical" color="transparent" />
+      <Stack direction="row" h="15px" p={4} backgroundColor=" #d7ccc8">
+        <Divider orientation="vertical" borderColor="transparent" />
       </Stack>
 
       <Container
         w="100%"
-        h="max-content"
+        h="25%"
         display="flex"
         justifyContent="space-evenly"
         alignItems="center"
@@ -124,11 +122,12 @@ export default function Projects() {
           alignSelf="flex-start"
           size="xs"
           marginLeft="4%"
-          marginBottom="2%"
         >
-          Square Life
+          <a href="https://github.com/niccmac/squareLife" target="	_blank">
+            SquareLife
+          </a>
         </Badge>
-        <Text align="start" marginLeft="4%" marginRight="4%" marginBottom="2%">
+        <Text align="start" marginLeft="4%" marginRight="4%">
           Right now, I'm working on a GitHub gamification inspired tracking app.
           Currently I'm learning how to use sequilise to set up the database!
           Here is a link to the repo{" "}
@@ -138,7 +137,7 @@ export default function Projects() {
         </Text>
         <Accordion
           allowToggle
-          h="max-content"
+          h="25%"
           borderColor="transparent"
           marginLeft="4%"
           marginRight="4%"
@@ -164,13 +163,13 @@ export default function Projects() {
           </AccordionItem>
         </Accordion>
       </Container>
-      <Stack direction="row" h="150px" p={4} backgroundColor=" #d7ccc8">
-        <Divider orientation="vertical" color="transparent" />
+      <Stack direction="row" h="15px" p={4} backgroundColor=" #d7ccc8">
+        <Divider orientation="vertical" borderColor="transparent" />
       </Stack>
 
       <Container
         w="100%"
-        h="max-content"
+        h="25%"
         display="flex"
         justifyContent="space-evenly"
         alignItems="center"
@@ -183,22 +182,22 @@ export default function Projects() {
           alignSelf="flex-start"
           size="xs"
           marginLeft="4%"
-          marginBottom="2%"
         >
-          Card Game
+          <a
+            href="https://github.com/niccmac/calculator/tree/main/src/components"
+            target="	_blank"
+          >
+            Card Game
+          </a>
         </Badge>
         <Text align="start" marginLeft="4%" marginRight="4%">
           This was a fun little memory card game I created to learn more about
-          React. Turning the cards and keeping track of matched cards helped me
-          learn useContext and gave me another chance to work on using
-          providers. Managing the useState was complex at first, and makes me
-          truly appreciate the hard work that goes into even the simplist of
-          features!
+          React.
         </Text>
 
         <Accordion
           allowToggle
-          h="max-content"
+          h="25%"
           borderColor="transparent"
           marginLeft="4%"
           marginRight="4%"
@@ -212,13 +211,22 @@ export default function Projects() {
               </AccordionButton>
             </h2>
             <AccordionPanel>
-              <GameProvider>{/* <CardGame></CardGame> */}</GameProvider>
+              <Text align="start" marginLeft="4%" marginRight="4%">
+                Turning the cards and keeping track of matched cards helped me
+                learn useContext and gave me another chance to work on using
+                providers. Managing the useState was complex at first, and makes
+                me truly appreciate the hard work that goes into even the
+                simplist of features!
+              </Text>
+              <GameProvider>
+                <CardGame />
+              </GameProvider>
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
       </Container>
       <Stack direction="row" h="150px" p={4} backgroundColor=" #d7ccc8">
-        <Divider orientation="vertical" color="transparent" />
+        <Divider orientation="vertical" borderColor="transparent" />
       </Stack>
     </>
   );

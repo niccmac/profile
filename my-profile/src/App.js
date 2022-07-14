@@ -21,7 +21,7 @@ function App() {
           className="main-container"
           align="right"
           w="33%"
-          h="500px"
+          h="100%"
           padding="5%"
         >
           <Box
@@ -31,6 +31,8 @@ function App() {
             justifyContent="space-between"
             alignItems="center"
             backgroundColor=" #d7ccc8"
+            paddingBottom="40%"
+            paddingTop="5%"
           >
             <Center
               flexDirection="column"
@@ -48,7 +50,7 @@ function App() {
           <br />
           <Container
             w="100%"
-            h="max-content"
+            h="100%"
             display="flex"
             justifyContent="space-evenly"
             backgroundColor=" #d7ccc8"

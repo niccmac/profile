@@ -7,11 +7,12 @@ export default function Contact() {
   return (
     <Box
       w="100%"
-      h="25%"
+      h="100%"
       display="flex"
       justifyContent="space-evenly"
       alignItems="center"
       backgroundColor=" #d7ccc8"
+      paddingBottom="10%"
     >
       <a href="https://github.com/niccmac" target="blank">
         <FaGitSquare size="45" />

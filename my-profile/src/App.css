@@ -1,6 +1,9 @@
 .App {
   text-align: center;
-  overflow: scroll;
+  /* overflow: auto; */
+  /* body { */
+  overflow-y: scroll !important;
+  /* } */
 }
 
 @media (prefers-reduced-motion: no-preference) {
