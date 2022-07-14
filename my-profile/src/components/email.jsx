@@ -69,7 +69,7 @@ export default function Email() {
         </Alert>
       ) : null}
       <form ref={form} onSubmit={sendEmail}>
-        <Stack direction="column" spacing={4} align="center">
+        <Stack direction="column" spacing={4} align="center" padding="10%">
           <Input
             placeholder="Your name"
             color="brand.900"
