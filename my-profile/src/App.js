@@ -3,6 +3,8 @@ import ProfileAvatar from "./components/avatar";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Email from "./components/email";
+import Skills from "./components/skills";
+
 import {
   Center,
   Container,
@@ -73,6 +75,7 @@ function App() {
         </Container>
         <Container w="33%%">
           <Projects />
+          <Skills></Skills>
         </Container>
         <br />
       </Flex>
