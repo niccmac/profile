@@ -30,7 +30,15 @@ const CardList = () => {
   return (
     <>
       <Box className="card-game-box">
-        <Button onClick={handleNewGame}> New Game</Button>
+        <Button
+          onClick={handleNewGame}
+          colorScheme="brand.900"
+          variant="outline"
+          size="sm"
+        >
+          {" "}
+          New Game
+        </Button>
 
         {game ? (
           <Drawer onClose={handleClose} isOpen={drawerOpen} size="full">
