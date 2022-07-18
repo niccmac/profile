@@ -72,7 +72,6 @@ export default function GameProvider(props) {
   };
   // New Game and reset state
   const newGame = () => {
-    console.log("New Game Created");
     setGame(true);
     setMatched([]);
     setFlipped([]);

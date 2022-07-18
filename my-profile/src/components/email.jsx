@@ -95,24 +95,24 @@ export default function Email() {
             isRequired
             name="message"
           />
-          <Tooltip
+          {/* <Tooltip
             label="Send your message to my email address - nicole.mac0404@gmail.com"
             bg="brand.900"
             placement="right-start"
             width="100%"
-          >
-            <span>
-              <Button
-                colorScheme="brand.900"
-                variant="outline"
-                type="submit"
-                value="Submit"
-                size="sm"
-              >
-                Send!
-              </Button>
-            </span>
-          </Tooltip>
+          > */}
+          <span>
+            <Button
+              colorScheme="brand.900"
+              variant="outline"
+              type="submit"
+              value="Submit"
+              size="sm"
+            >
+              Send!
+            </Button>
+          </span>
+          {/* </Tooltip> */}
         </Stack>
       </form>
     </>

@@ -5,80 +5,77 @@ import Contact from "./components/contact";
 import Email from "./components/email";
 import Skills from "./components/skills";
 
-import {
-  Center,
-  Container,
-  Text,
-  Box,
-  Divider,
-  Flex,
-  Badge,
-} from "@chakra-ui/react";
+import { Center, Text, Box, Divider, Grid, GridItem } from "@chakra-ui/react";
 
 function App() {
   return (
     <div className="App">
-      <Flex direction="row">
-        <Container
-          className="main-container"
-          align="right"
-          w="33%"
-          h="100%"
-          padding="5%"
-        >
-          <Box
-            w="100%"
-            h="100%"
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            backgroundColor=" #d7ccc8"
-            paddingBottom="40%"
-            paddingTop="5%"
-          >
-            <Center
-              flexDirection="column"
-              padding="10%"
-              alignItems="flex-start"
-            >
-              <Text fontSize="xl">Nicole MacLean </Text>
+      <Grid
+        h="min-content"
+        templateRows="repeat(2, 1fr)"
+        templateColumns="repeat(5, 1fr)"
+        gap={4}
+        padding={5}
+      >
+        <GridItem colSpan={1} bg="transparent">
+          <Box backgroundColor=" #d7ccc8" padding={4}>
+            <Center flexDirection="column">
+              <ProfileAvatar />
+
+              <Text alignItems="flex-start" fontSize="xl">
+                Nicole MacLean{" "}
+              </Text>
               <Divider />
-              <Text fontSize="sm">Full Stack Developer.</Text>
-              {/* <Text fontSize="md">Come take a look at my work.</Text> */}
+              <Text alignItems="flex-start" fontSize="sm">
+                Full Stack Developer.
+              </Text>
+              <br />
+              <br />
+              <br />
+              <br />
+              <Text fontSize="xs" as="em">
+                "There is no royal road to anything, one thing at a time, all
+                things in succession. That which grows fast, withers as rapidly.
+                That which grows slowly, endures."
+              </Text>
+              <Text fontSize="xs">- Josiah Gilbert Hollandd</Text>
             </Center>
-            <ProfileAvatar />
+            <br />
+            <br />
+            <br />
+            <br />
+            <Box>
+              <Contact></Contact>
+            </Box>
           </Box>
-          <Contact></Contact>
           <br />
-          <Container
-            w="100%"
-            h="100%"
-            display="flex"
-            justifyContent="space-evenly"
-            backgroundColor=" #d7ccc8"
-            flexDirection="column"
-          >
-            <Center
-              flexDirection="column"
-              padding="5%"
-              alignItems="flex-start"
-              backgroundColor=" #d7ccc8"
-            >
+          <br />
+          <br />
+          <br />
+          <Box backgroundColor=" #d7ccc8" padding={4}>
+            <Center flexDirection="column">
               <Text fontSize="xl">Contact </Text>
               <Divider />
               <Text fontSize="sm">Send me an email directly.</Text>
-              {/* <Text fontSize="md">Come take a look at my work.</Text> */}
             </Center>
 
             <Email></Email>
-          </Container>
-        </Container>
-        <Container w="33%%">
-          <Projects />
+          </Box>
+        </GridItem>
+
+        <GridItem colSpan={4} bg="papayawhip" backgroundColor=" #d7ccc8">
+          <Projects></Projects>
+        </GridItem>
+        <GridItem
+          colSpan={6}
+          bg="tomato"
+          padding={4}
+          backgroundColor=" #d7ccc8"
+          display="flex"
+        >
           <Skills></Skills>
-        </Container>
-        <br />
-      </Flex>
+        </GridItem>
+      </Grid>
     </div>
   );
 }
