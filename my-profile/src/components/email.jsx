@@ -1,19 +1,23 @@
 import React, { useRef } from "react";
+
 import emailjs from "emailjs-com";
 import {
   Input,
   Button,
   Textarea,
   Stack,
-  Tooltip,
   Alert,
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Container,
+  Text,
+  Divider,
 } from "@chakra-ui/react";
 import { useState } from "react";
 // Send button colours
 // TODO get tool tip working. Appears after alert
+// TODO fix divider full width
 export default function Email() {
   const form = useRef();
   const [visible, setVisable] = useState(false);
@@ -52,7 +56,7 @@ export default function Email() {
       {visible ? (
         <Alert
           colorScheme="brand.900"
-          color="#d7ccc8"
+          color="brand.800"
           status="success"
           variant="subtle"
           flexDirection="column"
@@ -68,39 +72,47 @@ export default function Email() {
           <AlertDescription maxWidth="sm">{message}</AlertDescription>
         </Alert>
       ) : null}
-      <form ref={form} onSubmit={sendEmail}>
-        <Stack direction="column" spacing={4} align="center" padding="10%">
-          <Input
-            placeholder="Your name"
-            color="brand.900"
-            colorScheme="brand.900"
-            focusBorderColor="brand.900"
-            errorBorderColor="red.500"
-            isRequired
-            name="name"
-          />
-          <Input
-            placeholder="Your email"
-            colorScheme="brand.900"
-            focusBorderColor="brand.900"
-            errorBorderColor="red.500"
-            isRequired
-            name="email"
-          />
-          <Textarea
-            placeholder="Write your message here!"
-            colorScheme="brand.900"
-            focusBorderColor="brand.900"
-            errorBorderColor="red.500"
-            isRequired
-            name="message"
-          />
-          <Tooltip
-            label="Send your message to my email address - nicole.mac0404@gmail.com"
-            bg="brand.900"
-            placement="right-start"
-            width="100%"
-          >
+      <Container
+        bg="brand.600"
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+        marginTop={10}
+        w="100%"
+      >
+        <Text alignItems="flex-start" fontSize="xl">
+          Email
+        </Text>
+        <Divider />
+        <form ref={form} onSubmit={sendEmail}>
+          <Stack direction="column" spacing={4} align="center" padding={5}>
+            <Input
+              placeholder="Your name"
+              color="brand.800"
+              colorScheme="brand.900"
+              focusBorderColor="brand.800"
+              errorBorderColor="red.500"
+              isRequired
+              name="name"
+            />
+            <Input
+              placeholder="Your email"
+              colorScheme="brand.800"
+              focusBorderColor="brand.800"
+              errorBorderColor="red.500"
+              isRequired
+              name="email"
+            />
+            <Textarea
+              placeholder="Write your message here!"
+              color="brand.800"
+              colorScheme="brand.900"
+              focusBorderColor="brand.800"
+              errorBorderColor="red.500"
+              isRequired
+              name="message"
+            />
+
             <span>
               <Button
                 colorScheme="brand.900"
@@ -112,9 +124,9 @@ export default function Email() {
                 Send!
               </Button>
             </span>
-          </Tooltip>
-        </Stack>
-      </form>
+          </Stack>
+        </form>
+      </Container>
     </>
   );
 }

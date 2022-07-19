@@ -1,79 +1,44 @@
 import "./App.css";
-import ProfileAvatar from "./components/avatar";
+
 import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Email from "./components/email";
-import {
-  Center,
-  Container,
-  Text,
-  Box,
-  Divider,
-  Flex,
-  Badge,
-} from "@chakra-ui/react";
+import Skills from "./components/skills";
+
+import { Center, Text, Box, Divider, Grid, GridItem } from "@chakra-ui/react";
+import Profile from "./profile";
 
 function App() {
   return (
     <div className="App">
-      <Flex direction="row">
-        <Container
-          className="main-container"
-          align="right"
-          w="33%"
-          h="500px"
-          padding="5%"
-        >
-          <Box
-            w="100%"
-            h="100%"
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            backgroundColor=" #d7ccc8"
-          >
-            <Center
-              flexDirection="column"
-              padding="10%"
-              alignItems="flex-start"
-            >
-              <Text fontSize="xl">Nicole MacLean </Text>
-              <Divider />
-              <Text fontSize="sm">Full Stack Developer.</Text>
-              {/* <Text fontSize="md">Come take a look at my work.</Text> */}
-            </Center>
-            <ProfileAvatar />
-          </Box>
-          <Contact></Contact>
-          <br />
-          <Container
-            w="100%"
-            h="max-content"
-            display="flex"
-            justifyContent="space-evenly"
-            backgroundColor=" #d7ccc8"
-            flexDirection="column"
-          >
-            <Center
-              flexDirection="column"
-              padding="5%"
-              alignItems="flex-start"
-              backgroundColor=" #d7ccc8"
-            >
-              <Text fontSize="xl">Contact </Text>
-              <Divider />
-              <Text fontSize="sm">Send me an email directly.</Text>
-              {/* <Text fontSize="md">Come take a look at my work.</Text> */}
-            </Center>
+      <Grid
+        margin={20}
+        templateRows="repeat(2, 1fr)"
+        templateColumns="repeat(2, 1fr)"
+        columns={2}
+        spacingX="40px"
+        spacingY="20px"
+        paddingBottom={10}
+      >
+        <Box aria-colspan={1}>
+          <Profile></Profile>
+        </Box>
+        <Box aria-colspan={1}></Box>
+        <Box aria-colspan={1}></Box>
 
-            <Email></Email>
-          </Container>
-        </Container>
-        <Container w="33%%">
-          <Projects />
-        </Container>
-        <br />
-      </Flex>
+        <Box aria-colspan={1}>
+          <Projects></Projects>
+        </Box>
+        <Divider paddingTop={10} paddingBottom={10} />
+        <Divider paddingTop={10} paddingBottom={10} />
+
+        <Box h="600px" marginTop={10} aria-colspan={2}>
+          <Skills h="200px"></Skills>
+        </Box>
+        <Box h="200px" aria-colspan={2}>
+          <Email h="200px"></Email>
+        </Box>
+      </Grid>
     </div>
   );
 }
