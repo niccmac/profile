@@ -85,55 +85,17 @@ export default function Projects() {
     ml: `-${currentSlide * 100}%`,
   };
   return (
-    <Flex bg="transparent" h="100%" w="100%">
-      <Flex
-        overflow="hidden"
-        pos="relative"
-        h="100%"
-        w="100%"
-        className="project-box"
-      >
-        <Flex h="full" w="full" {...carouselStyle}>
-          <Box key={`slide-1`} boxSize="full" flex="none">
-            <Text
-              color="brand.800"
-              fontSize="xs"
-              p="8px 12px"
-              pos="absolute"
-              top="0"
-            >
-              {1} / {slidesCount + 1}
-            </Text>
-
-            <Container
-              w="100%"
-              h="100%"
-              overflow="scroll"
-              display="flex"
-              justifyContent="space-evenly"
-              alignItems="center"
-              backgroundColor="brand.600"
-              flexDirection="column"
-            >
-              <Center
-                flexDirection="column"
-                padding="5%"
-                alignItems="flex-start"
-                backgroundColor=" brand.600"
-              >
-                <Text fontSize="xl">Projects </Text>
-                <Divider />
-                <Text fontSize="sm">What I'm working on.</Text>
-              </Center>
-            </Container>
-          </Box>
-          {slides.map((slide) => (
-            <Box
-              key={`slide-${slide.sid}`}
-              boxSize="full"
-              flex="none"
-              backgroundColor="brand.600"
-            >
+    <div className="projects">
+      <Flex bg="transparent" h="100%" w="100%">
+        <Flex
+          overflow="hidden"
+          pos="relative"
+          h="100%"
+          w="100%"
+          className="project-box"
+        >
+          <Flex h="full" w="full" {...carouselStyle}>
+            <Box key={`slide-1`} boxSize="full" flex="none">
               <Text
                 color="brand.800"
                 fontSize="xs"
@@ -141,13 +103,13 @@ export default function Projects() {
                 pos="absolute"
                 top="0"
               >
-                {slide.sid} / {slidesCount + 1}
+                {1} / {slidesCount + 1}
               </Text>
 
               <Container
                 w="100%"
-                overflow="scroll"
                 h="100%"
+                overflow="scroll"
                 display="flex"
                 justifyContent="space-evenly"
                 alignItems="center"
@@ -160,49 +122,89 @@ export default function Projects() {
                   alignItems="flex-start"
                   backgroundColor=" brand.600"
                 >
-                  <Text fontSize="xl" as="ins">
-                    <a href={slide.link} target="	_blank">
-                      {slide.project}
-                    </a>
-                  </Text>
-
-                  <Text align="start" marginLeft="10%" marginRight="10%">
-                    <Divider />
-                    {slide.text}
-                  </Text>
+                  <Text fontSize="xl">Projects </Text>
+                  <Divider />
+                  <Text fontSize="sm">What I'm working on.</Text>
                 </Center>
-                {slide.accordian}
               </Container>
             </Box>
-          ))}
+            {slides.map((slide) => (
+              <Box
+                key={`slide-${slide.sid}`}
+                boxSize="full"
+                flex="none"
+                backgroundColor="brand.600"
+              >
+                <Text
+                  color="brand.800"
+                  fontSize="xs"
+                  p="8px 12px"
+                  pos="absolute"
+                  top="0"
+                >
+                  {slide.sid} / {slidesCount + 1}
+                </Text>
+
+                <Container
+                  w="100%"
+                  overflow="scroll"
+                  h="100%"
+                  display="flex"
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                  backgroundColor="brand.600"
+                  flexDirection="column"
+                >
+                  <Center
+                    flexDirection="column"
+                    padding="5%"
+                    alignItems="flex-start"
+                    backgroundColor=" brand.600"
+                  >
+                    <Text fontSize="xl" as="ins">
+                      <a href={slide.link} target="	_blank">
+                        {slide.project}
+                      </a>
+                    </Text>
+
+                    <Text align="start" marginLeft="10%" marginRight="10%">
+                      <Divider />
+                      {slide.text}
+                    </Text>
+                  </Center>
+                  {slide.accordian}
+                </Container>
+              </Box>
+            ))}
+          </Flex>
+          <Text {...arrowStyles} left="0" onClick={prevSlide}>
+            &#10094;
+          </Text>
+          <Text {...arrowStyles} right="0" onClick={nextSlide}>
+            &#10095;
+          </Text>
+          <HStack justify="center" pos="absolute" bottom="8px" w="full">
+            {Array.from({
+              length: slidesCount + 1,
+            }).map((_, slide) => (
+              <Box
+                key={`dots-${slide}`}
+                cursor="pointer"
+                boxSize={["7px", null, "15px"]}
+                m="0 2px"
+                bg={currentSlide === slide ? "brand.700" : "brand.800"}
+                rounded="50%"
+                display="inline-block"
+                transition="background-color 0.6s ease"
+                _hover={{
+                  bg: "blackAlpha.800",
+                }}
+                onClick={() => setSlide(slide)}
+              ></Box>
+            ))}
+          </HStack>
         </Flex>
-        <Text {...arrowStyles} left="0" onClick={prevSlide}>
-          &#10094;
-        </Text>
-        <Text {...arrowStyles} right="0" onClick={nextSlide}>
-          &#10095;
-        </Text>
-        <HStack justify="center" pos="absolute" bottom="8px" w="full">
-          {Array.from({
-            length: slidesCount + 1,
-          }).map((_, slide) => (
-            <Box
-              key={`dots-${slide}`}
-              cursor="pointer"
-              boxSize={["7px", null, "15px"]}
-              m="0 2px"
-              bg={currentSlide === slide ? "brand.700" : "brand.800"}
-              rounded="50%"
-              display="inline-block"
-              transition="background-color 0.6s ease"
-              _hover={{
-                bg: "blackAlpha.800",
-              }}
-              onClick={() => setSlide(slide)}
-            ></Box>
-          ))}
-        </HStack>
       </Flex>
-    </Flex>
+    </div>
   );
 }

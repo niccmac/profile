@@ -16,7 +16,7 @@ export default function Contact() {
     onOpen();
   }
   return (
-    <>
+    <div className="contact">
       <Box
         display="flex"
         justifyContent="space-evenly"
@@ -46,6 +46,6 @@ export default function Contact() {
       >
         <AlertDialogExample></AlertDialogExample>
       </AlertDialog>
-    </>
+    </div>
   );
 }

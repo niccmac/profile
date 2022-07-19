@@ -63,3 +63,37 @@
   background-color: #b68f40;
   /* background-color: #d7ccc8; */
 }
+
+.contact {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  right: 0%;
+}
+
+.profile {
+  /* position: fixed; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* width: 1000px; */
+  /* margin: 50px 50px 50px 50px; */
+  display: flex;
+  padding: 1.5em;
+  height: 20%;
+  justify-content: space-between;
+  width: 100%; /**/
+  /* background-color: #4056A1; */
+  z-index: 20;
+  position: fixed; /**/
+  top: 0; /**/
+  /* color: #FFFFFF; */
+}
+.projects {
+  /* position: absolute;  */
+  height: 100%;
+}
+.avatar {
+  vertical-align: middle;
+
+  /* object-fit: scale-down; */
+}
