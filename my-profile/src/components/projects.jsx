@@ -38,8 +38,8 @@ export default function Projects() {
       text: "This is project management app, a group project that I worked on during my diploma in Web Development at Lighthouse Labs and was created in two weeks. Focal has plenty of exciting features to explore, take a look at the video below to have a full walkthrough of all of them.",
       link: "https://www.focal-project.ca/",
       accordian: (
-        <video className="project-video" width="auto" height="auto">
-          <source src="focal_pres_original.mp4" controls type="video/mp4" />
+        <video className="project-video" width="auto" height="auto" controls>
+          <source src="focal_pres_original.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       ),
@@ -84,127 +84,107 @@ export default function Projects() {
     transition: "all .5s",
     ml: `-${currentSlide * 100}%`,
   };
+
   return (
     <div className="projects">
-      <Flex bg="transparent" h="100%" w="100%">
-        <Flex
-          overflow="hidden"
-          pos="relative"
-          h="100%"
-          w="100%"
-          className="project-box"
-        >
-          <Flex h="full" w="full" {...carouselStyle}>
-            <Box key={`slide-1`} boxSize="full" flex="none">
-              <Text
-                color="brand.800"
-                fontSize="xs"
-                p="8px 12px"
-                pos="absolute"
-                top="0"
-              >
-                {1} / {slidesCount + 1}
-              </Text>
-
-              <Container
-                w="100%"
-                h="100%"
-                overflow="scroll"
-                display="flex"
-                justifyContent="space-evenly"
-                alignItems="center"
-                backgroundColor="brand.600"
-                flexDirection="column"
-              >
-                <Center
-                  flexDirection="column"
-                  padding="5%"
-                  alignItems="flex-start"
-                  backgroundColor=" brand.600"
-                >
-                  <Text fontSize="xl">Projects </Text>
-                  <Divider />
-                  <Text fontSize="sm">What I'm working on.</Text>
-                </Center>
-              </Container>
-            </Box>
-            {slides.map((slide) => (
-              <Box
-                key={`slide-${slide.sid}`}
-                boxSize="full"
-                flex="none"
-                backgroundColor="brand.600"
-              >
-                <Text
-                  color="brand.800"
-                  fontSize="xs"
-                  p="8px 12px"
-                  pos="absolute"
-                  top="0"
-                >
-                  {slide.sid} / {slidesCount + 1}
+      <Container>
+        <Flex bg="transparent">
+          <Flex overflow="scroll" pos="relative" className="project-box">
+            <Flex h="full" w="full" {...carouselStyle}>
+              <Box key={`slide-1`} boxSize="full" flex="none" align="center">
+                <Text color="brand.800" fontSize="xs" p="8px 12px">
+                  {1} / {slidesCount + 1}
                 </Text>
 
                 <Container
-                  w="100%"
-                  overflow="scroll"
-                  h="100%"
-                  display="flex"
-                  justifyContent="space-evenly"
-                  alignItems="center"
-                  backgroundColor="brand.600"
+                  paddingTop={10}
                   flexDirection="column"
+                  align="left"
+                  margin={1}
+                  backgroundColor="brand.600"
+                  h="100%"
+                  w="80%"
+                  m={10}
                 >
-                  <Center
-                    flexDirection="column"
-                    padding="5%"
-                    alignItems="flex-start"
-                    backgroundColor=" brand.600"
-                  >
-                    <Text fontSize="xl" as="ins">
-                      <a href={slide.link} target="	_blank">
-                        {slide.project}
-                      </a>
-                    </Text>
-
-                    <Text align="start" marginLeft="10%" marginRight="10%">
-                      <Divider />
-                      {slide.text}
-                    </Text>
-                  </Center>
-                  {slide.accordian}
+                  <Text fontSize="3xl" w="100%">
+                    Projects
+                  </Text>
+                  <Divider />
+                  <Text fontSize="sm">What I'm working on.</Text>
                 </Container>
               </Box>
-            ))}
+              {slides.map((slide) => (
+                <Box key={`slide-${slide.sid}`} boxSize="full" flex="none">
+                  <Text color="brand.800" fontSize="xs" p="8px 12px">
+                    {slide.sid} / {slidesCount + 1}
+                  </Text>
+
+                  <Container
+                    flexDirection="column"
+                    h="100%"
+                    w="80%"
+                    display="flex"
+                    // justifyContent="space-evenly"
+                    alignItems="center"
+                    backgroundColor="brand.600"
+                    // marginBottom={10}
+                    paddingBottom={10}
+                  >
+                    <Container
+                      paddingTop={10}
+                      flexDirection="column"
+                      align="left"
+                      margin={1}
+                      backgroundColor="brand.600"
+                      h="100%"
+                      w="80%"
+                      m={10}
+                    >
+                      <Text fontSize="3xl" w="100%">
+                        <a href={slide.link} target="	_blank">
+                          {slide.project}
+                        </a>
+                      </Text>
+                      <Divider />
+                      <Text fontSize="sm"> {slide.text}.</Text>
+                    </Container>
+
+                    {slide.accordian}
+                  </Container>
+                </Box>
+              ))}
+            </Flex>
+            <Text {...arrowStyles} left="0" onClick={prevSlide}>
+              &#10094;
+            </Text>
+            <Text {...arrowStyles} right="0" onClick={nextSlide}>
+              &#10095;
+            </Text>
           </Flex>
-          <Text {...arrowStyles} left="0" onClick={prevSlide}>
-            &#10094;
-          </Text>
-          <Text {...arrowStyles} right="0" onClick={nextSlide}>
-            &#10095;
-          </Text>
-          <HStack justify="center" pos="absolute" bottom="8px" w="full">
-            {Array.from({
-              length: slidesCount + 1,
-            }).map((_, slide) => (
-              <Box
-                key={`dots-${slide}`}
-                cursor="pointer"
-                boxSize={["7px", null, "15px"]}
-                m="0 2px"
-                bg={currentSlide === slide ? "brand.700" : "brand.800"}
-                rounded="50%"
-                display="inline-block"
-                transition="background-color 0.6s ease"
-                _hover={{
-                  bg: "blackAlpha.800",
-                }}
-                onClick={() => setSlide(slide)}
-              ></Box>
-            ))}
-          </HStack>
         </Flex>
-      </Flex>
+      </Container>
+      <Container w="full">
+        <HStack justifyContent="center">
+          {Array.from({
+            length: slidesCount + 1,
+          }).map((_, slide) => (
+            <Box
+              key={`dots-${slide}`}
+              cursor="pointer"
+              boxSize={["7px", null, "15px"]}
+              m="0 2px"
+              bg={currentSlide === slide ? "brand.900" : "brand.800"}
+              rounded="50%"
+              display="inline-block"
+              transition="background-color 0.6s ease"
+              _hover={{
+                bg: "blackAlpha.800",
+              }}
+              onClick={() => setSlide(slide)}
+            ></Box>
+          ))}
+        </HStack>
+      </Container>
     </div>
   );
 }
