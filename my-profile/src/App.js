@@ -4,7 +4,7 @@ import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Email from "./components/email";
 import Skills from "./components/skills";
-import Profile from "./profile";
+import Profile from "./components/profile";
 
 import {
   Center,

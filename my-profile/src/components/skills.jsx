@@ -9,6 +9,7 @@ import {
   Divider,
   Grid,
   GridItem,
+  Container,
 } from "@chakra-ui/react";
 import {
   DiJsBadge,
@@ -126,18 +127,24 @@ export default function Skills() {
     <SimpleGrid
       columns={1}
       backgroundColor="brand.600"
-      justifyContent="center"
-      w="100%"
+      // justifyContent="center"
+      w="70%"
     >
       <Box colSpan={1}>
         <Center flexDirection="column">
-          <Text alignItems="flex-start" fontSize="xl">
-            Skills
-          </Text>
-          <Divider />
-          <Text alignItems="flex-start" fontSize="sm">
-            Tried and tested.
-          </Text>
+          <Container
+            flexDirection="column"
+            align="left"
+            margin={1}
+            maxWidth="100%"
+          >
+            <Text fontSize="xl" w="100%">
+              Skills
+            </Text>
+            <Divider />
+            <Text fontSize="sm">Tried and tested.</Text>
+          </Container>
+
           <SimpleGrid
             padding={4}
             columns={10}
