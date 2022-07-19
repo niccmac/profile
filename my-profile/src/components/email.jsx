@@ -11,6 +11,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Container,
 } from "@chakra-ui/react";
 import { useState } from "react";
 // Send button colours
@@ -69,54 +70,56 @@ export default function Email() {
           <AlertDescription maxWidth="sm">{message}</AlertDescription>
         </Alert>
       ) : null}
-      <form ref={form} onSubmit={sendEmail}>
-        <Stack direction="column" spacing={4} align="center" padding="10%">
-          <Input
-            placeholder="Your name"
-            color="brand.900"
-            colorScheme="brand.900"
-            focusBorderColor="brand.900"
-            errorBorderColor="red.500"
-            isRequired
-            name="name"
-          />
-          <Input
-            placeholder="Your email"
-            colorScheme="brand.900"
-            focusBorderColor="brand.900"
-            errorBorderColor="red.500"
-            isRequired
-            name="email"
-          />
-          <Textarea
-            placeholder="Write your message here!"
-            colorScheme="brand.900"
-            focusBorderColor="brand.900"
-            errorBorderColor="red.500"
-            isRequired
-            name="message"
-          />
-          {/* <Tooltip
+      <Container bg="brand.600">
+        <form ref={form} onSubmit={sendEmail}>
+          <Stack direction="column" spacing={4} align="center" padding="10%">
+            <Input
+              placeholder="Your name"
+              color="brand.900"
+              colorScheme="brand.900"
+              focusBorderColor="brand.900"
+              errorBorderColor="red.500"
+              isRequired
+              name="name"
+            />
+            <Input
+              placeholder="Your email"
+              colorScheme="brand.900"
+              focusBorderColor="brand.900"
+              errorBorderColor="red.500"
+              isRequired
+              name="email"
+            />
+            <Textarea
+              placeholder="Write your message here!"
+              colorScheme="brand.900"
+              focusBorderColor="brand.900"
+              errorBorderColor="red.500"
+              isRequired
+              name="message"
+            />
+            {/* <Tooltip
             label="Send your message to my email address - nicole.mac0404@gmail.com"
             bg="brand.900"
             placement="right-start"
             width="100%"
           > */}
-          <span>
-            <Button
-              colorScheme="brand.900"
-              variant="outline"
-              type="submit"
-              value="Submit"
-              size="sm"
-            >
-              Send!
-            </Button>
-          </span>
-          <Contact></Contact>
-          {/* </Tooltip> */}
-        </Stack>
-      </form>
+            <span>
+              <Button
+                colorScheme="brand.900"
+                variant="outline"
+                type="submit"
+                value="Submit"
+                size="sm"
+              >
+                Send!
+              </Button>
+            </span>
+            <Contact></Contact>
+            {/* </Tooltip> */}
+          </Stack>
+        </form>
+      </Container>
     </>
   );
 }

@@ -78,7 +78,7 @@ export default function Projects() {
   };
 
   const nextSlide = () => {
-    setCurrentSlide((s) => (s === slidesCount + 1 ? 0 : s + 1));
+    setCurrentSlide((s) => (s === slidesCount ? 0 : s + 1));
   };
 
   const setSlide = (slide) => {
@@ -90,7 +90,7 @@ export default function Projects() {
     ml: `-${currentSlide * 100}%`,
   };
   return (
-    <Flex bg="transparent" padding={4} h="100%" w="100%">
+    <Flex bg="transparent" h="100%" w="100%">
       <Flex
         overflow="hidden"
         pos="relative"
@@ -137,8 +137,8 @@ export default function Projects() {
             <Box
               key={`slide-${slide.sid}`}
               boxSize="full"
-              shadow="md"
               flex="none"
+              backgroundColor="brand.600"
             >
               <Text
                 color="white"

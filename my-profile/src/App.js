@@ -18,19 +18,23 @@ function App() {
         gap={4}
         padding={5}
       >
-        <GridItem colSpan={1} bg="transparent">
+        <GridItem
+        //  colSpan={1} bg="transparent"
+        >
           <Profile></Profile>
         </GridItem>
 
-        <GridItem colSpan={4} bg="transparent">
+        <GridItem
+        // colSpan={4} bg="transparent"
+        >
           <Projects></Projects>
         </GridItem>
         <GridItem
-          colSpan={5}
-          h="fit-content"
-          bg="tomato"
-          padding={4}
-          backgroundColor="brand.600"
+        // colSpan={5}
+        // h="fit-content"
+        // bg="tomato"
+        // padding={4}
+        // backgroundColor="brand.600"
         >
           <Skills></Skills>
         </GridItem>
