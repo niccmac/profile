@@ -4,6 +4,7 @@ import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Email from "./components/email";
 import Skills from "./components/skills";
+import Profile from "./profile";
 
 import {
   Center,
@@ -21,14 +22,21 @@ import {
   HStack,
   Icon,
 } from "@chakra-ui/react";
-import { FaFacebookF } from "react-icons/fa";
-import Profile from "./profile";
 
 function App() {
   return (
     <div className="App">
       <Profile />
-      <Box>{/* <Projects /> */}</Box>
+      <Flex
+        padding={4}
+        minWidth="max-content"
+        alignItems="center"
+        flexDirection="column"
+        marginBottom="200px"
+      >
+        <Projects />
+        <Skills />
+      </Flex>
 
       <Contact />
     </div>
