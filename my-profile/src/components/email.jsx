@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Contact from "./contact";
 import emailjs from "emailjs-com";
 import {
   Input,
@@ -112,6 +113,7 @@ export default function Email() {
               Send!
             </Button>
           </span>
+          <Contact></Contact>
           {/* </Tooltip> */}
         </Stack>
       </form>

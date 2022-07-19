@@ -11,7 +11,8 @@ import {
   faSkullCrossbones,
   faDiamond,
 } from "@fortawesome/free-solid-svg-icons";
-import { Button, Alert, AlertTitle } from "@chakra-ui/react";
+import { Button, Alert, Flex, Icon, Box, chakra } from "@chakra-ui/react";
+import { IoMdCheckmarkCircle } from "react-icons/io";
 const icons = [
   { icon: faCoffee },
   { icon: faGhost },
@@ -110,10 +111,63 @@ export default function GameProvider(props) {
   if (match.length === 16) {
     return (
       <div>
-        <Button onClick={newGame}> New Game</Button>
-        <Alert severity="success">
-          <AlertTitle>YOU WON!!!</AlertTitle> It took {turns} turns to win...
-        </Alert>
+        <Button
+          colorScheme="brand.900"
+          variant="outline"
+          type="submit"
+          value="Submit"
+          size="sm"
+          onClick={newGame}
+        >
+          {" "}
+          New Game
+        </Button>
+
+        <Flex
+          w="full"
+          bg="transparent"
+          p={50}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Flex
+            maxW="sm"
+            w="full"
+            mx="auto"
+            bg="white"
+            _dark={{
+              bg: "gray.800",
+            }}
+            rounded="lg"
+            overflow="hidden"
+          >
+            <Flex
+              justifyContent="center"
+              alignItems="center"
+              w={12}
+              bg="brand.900"
+            >
+              <Icon as={IoMdCheckmarkCircle} color="white" boxSize={6} />
+            </Flex>
+
+            <Box mx={-3} py={2} px={4}>
+              <Box mx={3}>
+                <chakra.span color="brand.900" fontWeight="bold">
+                  You won!
+                </chakra.span>
+                <chakra.p
+                  color="gray.600"
+                  _dark={{
+                    color: "gray.200",
+                  }}
+                  fontSize="sm"
+                >
+                  It took you {turns} turns to complete.
+                </chakra.p>
+              </Box>
+            </Box>
+          </Flex>
+        </Flex>
       </div>
     );
   }

@@ -99,7 +99,7 @@ export default function Projects() {
         className="project-box"
       >
         <Flex h="full" w="full" {...carouselStyle}>
-          <Box key={`slide-1`} boxSize="full" shadow="md" flex="none">
+          <Box key={`slide-1`} boxSize="full" flex="none">
             <Text
               color="white"
               fontSize="xs"
@@ -118,7 +118,7 @@ export default function Projects() {
               display="flex"
               justifyContent="space-evenly"
               alignItems="center"
-              backgroundColor=" #d7ccc8"
+              backgroundColor="brand.600"
               flexDirection="column"
             >
               <Center
@@ -157,10 +157,10 @@ export default function Projects() {
                 display="flex"
                 justifyContent="space-evenly"
                 alignItems="center"
-                backgroundColor=" #d7ccc8"
+                backgroundColor=""
                 flexDirection="column"
               >
-                <Text fontSize="xl">
+                <Text fontSize="xl" as="ins">
                   <a href={slide.link} target="	_blank">
                     {slide.project}
                   </a>{" "}
@@ -168,9 +168,9 @@ export default function Projects() {
 
                 <Text align="start" marginLeft="10%" marginRight="10%">
                   <Divider />
-                  <br />
                   {slide.text}
                 </Text>
+
                 {slide.accordian}
               </Container>
             </Box>

@@ -123,8 +123,8 @@ export default function Skills() {
     },
   ];
   return (
-    <SimpleGrid columns={1} backgroundColor=" #d7ccc8">
-      <Box colSpan={1} alignContent="center">
+    <SimpleGrid columns={1} backgroundColor="brand.600" justifyContent="center">
+      <Box colSpan={1}>
         <Center flexDirection="column">
           <Text alignItems="flex-start" fontSize="xl">
             Skills
@@ -142,7 +142,14 @@ export default function Skills() {
             justifyItems="center"
           >
             {skills.map((skill) => {
-              return <img src={skill.src} alt={skill.alt} width={100} />;
+              return (
+                <img
+                  src={skill.src}
+                  alt={skill.alt}
+                  width={100}
+                  key={skill.src}
+                />
+              );
             })}
           </SimpleGrid>
         </Center>
