@@ -123,7 +123,12 @@ export default function Skills() {
     },
   ];
   return (
-    <SimpleGrid columns={1} backgroundColor="brand.600" justifyContent="center">
+    <SimpleGrid
+      columns={1}
+      backgroundColor="brand.600"
+      justifyContent="center"
+      w="100%"
+    >
       <Box colSpan={1}>
         <Center flexDirection="column">
           <Text alignItems="flex-start" fontSize="xl">

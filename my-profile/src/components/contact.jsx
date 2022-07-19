@@ -21,7 +21,7 @@ export default function Contact() {
         display="flex"
         justifyContent="space-evenly"
         alignItems="center"
-        backgroundColor=" #d7ccc8"
+        backgroundColor="brand.600"
         padding={4}
       >
         <a href="https://github.com/niccmac" target="blank">

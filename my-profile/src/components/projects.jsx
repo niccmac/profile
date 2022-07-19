@@ -1,11 +1,6 @@
 import { useState } from "react";
 import {
-  Accordion,
   Container,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  AccordionItem,
   Divider,
   Text,
   Image,
@@ -25,7 +20,7 @@ export default function Projects() {
     w: "auto",
     mt: "-22px",
     p: "16px",
-    color: "white",
+    color: "brand.800",
     fontWeight: "bold",
     fontSize: "18px",
     transition: "0.6s ease",
@@ -101,7 +96,7 @@ export default function Projects() {
         <Flex h="full" w="full" {...carouselStyle}>
           <Box key={`slide-1`} boxSize="full" flex="none">
             <Text
-              color="white"
+              color="brand.800"
               fontSize="xs"
               p="8px 12px"
               pos="absolute"
@@ -114,7 +109,6 @@ export default function Projects() {
               w="100%"
               h="100%"
               overflow="scroll"
-              // h="max-content"
               display="flex"
               justifyContent="space-evenly"
               alignItems="center"
@@ -125,7 +119,7 @@ export default function Projects() {
                 flexDirection="column"
                 padding="5%"
                 alignItems="flex-start"
-                backgroundColor=" #d7ccc8"
+                backgroundColor=" brand.600"
               >
                 <Text fontSize="xl">Projects </Text>
                 <Divider />
@@ -141,7 +135,7 @@ export default function Projects() {
               backgroundColor="brand.600"
             >
               <Text
-                color="white"
+                color="brand.800"
                 fontSize="xs"
                 p="8px 12px"
                 pos="absolute"
@@ -157,20 +151,26 @@ export default function Projects() {
                 display="flex"
                 justifyContent="space-evenly"
                 alignItems="center"
-                backgroundColor=""
+                backgroundColor="brand.600"
                 flexDirection="column"
               >
-                <Text fontSize="xl" as="ins">
-                  <a href={slide.link} target="	_blank">
-                    {slide.project}
-                  </a>{" "}
-                </Text>
+                <Center
+                  flexDirection="column"
+                  padding="5%"
+                  alignItems="flex-start"
+                  backgroundColor=" brand.600"
+                >
+                  <Text fontSize="xl" as="ins">
+                    <a href={slide.link} target="	_blank">
+                      {slide.project}
+                    </a>
+                  </Text>
 
-                <Text align="start" marginLeft="10%" marginRight="10%">
-                  <Divider />
-                  {slide.text}
-                </Text>
-
+                  <Text align="start" marginLeft="10%" marginRight="10%">
+                    <Divider />
+                    {slide.text}
+                  </Text>
+                </Center>
                 {slide.accordian}
               </Container>
             </Box>
@@ -191,7 +191,7 @@ export default function Projects() {
               cursor="pointer"
               boxSize={["7px", null, "15px"]}
               m="0 2px"
-              bg={currentSlide === slide ? "white" : "white"}
+              bg={currentSlide === slide ? "brand.700" : "brand.800"}
               rounded="50%"
               display="inline-block"
               transition="background-color 0.6s ease"

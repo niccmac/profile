@@ -12,35 +12,32 @@ function App() {
   return (
     <div className="App">
       <Grid
-        h="min-content"
-        templateRows="repeat(4, 1fr)"
-        templateColumns="repeat(5, 1fr)"
-        gap={4}
-        padding={5}
+        margin={20}
+        templateRows="repeat(2, 1fr)"
+        templateColumns="repeat(2, 1fr)"
+        columns={2}
+        spacingX="40px"
+        spacingY="20px"
+        paddingBottom={10}
       >
-        <GridItem
-        //  colSpan={1} bg="transparent"
-        >
+        <Box aria-colspan={1}>
           <Profile></Profile>
-        </GridItem>
+        </Box>
+        <Box aria-colspan={1}></Box>
+        <Box aria-colspan={1}></Box>
 
-        <GridItem
-        // colSpan={4} bg="transparent"
-        >
+        <Box aria-colspan={1}>
           <Projects></Projects>
-        </GridItem>
-        <GridItem
-        // colSpan={5}
-        // h="fit-content"
-        // bg="tomato"
-        // padding={4}
-        // backgroundColor="brand.600"
-        >
-          <Skills></Skills>
-        </GridItem>
-        <GridItem>
-          <Email></Email>
-        </GridItem>
+        </Box>
+        <Divider paddingTop={10} paddingBottom={10} />
+        <Divider paddingTop={10} paddingBottom={10} />
+
+        <Box h="600px" marginTop={10} aria-colspan={2}>
+          <Skills h="200px"></Skills>
+        </Box>
+        <Box h="200px" aria-colspan={2}>
+          <Email h="200px"></Email>
+        </Box>
       </Grid>
     </div>
   );

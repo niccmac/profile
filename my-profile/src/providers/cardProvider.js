@@ -147,7 +147,7 @@ export default function GameProvider(props) {
               w={12}
               bg="brand.900"
             >
-              <Icon as={IoMdCheckmarkCircle} color="white" boxSize={6} />
+              <Icon as={IoMdCheckmarkCircle} color="brand.800" boxSize={6} />
             </Flex>
 
             <Box mx={-3} py={2} px={4}>
@@ -155,13 +155,7 @@ export default function GameProvider(props) {
                 <chakra.span color="brand.900" fontWeight="bold">
                   You won!
                 </chakra.span>
-                <chakra.p
-                  color="gray.600"
-                  _dark={{
-                    color: "gray.200",
-                  }}
-                  fontSize="sm"
-                >
+                <chakra.p color="brand.900" fontSize="sm">
                   It took you {turns} turns to complete.
                 </chakra.p>
               </Box>

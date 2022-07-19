@@ -19,7 +19,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const CardList = () => {
-  const { cardShow, newGame, handleCardClick, checkFlipped, cards, game } =
+  const { cardShow, newGame, handleCardClick, checkFlipped, cards } =
     useContext(gameContext);
 
   return (
@@ -39,7 +39,7 @@ const CardList = () => {
         >
           New Game
         </Button>
-        <Divider></Divider>
+        <br />
         <Box padding={4} borderRadius={20}>
           <Grid
             className="card-game"
@@ -64,6 +64,7 @@ const CardList = () => {
                       onClick={(event) =>
                         handleCardClick(event, card.id, card.icon)
                       }
+                      inverse
                     />
                   </Box>
                 </GridItem>
