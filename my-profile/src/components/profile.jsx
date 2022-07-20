@@ -14,6 +14,9 @@ export default function Profile() {
         justifyContent="space-between"
         minWidth="max-content"
         alignItems="center"
+        style={{
+          boxShadow: "10px 10px  #eee5e9",
+        }}
       >
         <Container
           flexDirection="column"

@@ -35,7 +35,7 @@ export default function Projects() {
     {
       sid: 2,
       project: "Focal",
-      text: `This is project management app. It took two weeks to create as a group during my Web Development diploma at Lighthouse Labs. Focal has plenty of exciting features to explore, take a look at the video below to have a full walkthrough of all of them.`,
+      text: `This is project management app. It took two weeks to create as a group during my Web Development diploma at Lighthouse Labs. Focal has plenty of exciting features to explore, take a look at the video below to have a full walkthrough of them all.`,
       link: "https://www.focal-project.ca/",
       accordian: (
         <video className="project-video" width="auto" height="auto" controls>
@@ -47,7 +47,7 @@ export default function Projects() {
     {
       sid: 3,
       project: "Square Life",
-      text: "Right now, I'm working on a GitHub gamification inspired tracking app. Currently I'm learning how to use sequilise to set up the database! So far it's named Square Life. If you have ANY better suggestions for names please send me an email! The idea is just to log, using coloured squares, how much you do of a certain task. Such as drinking water - the more cups you drink the darker your square for that day becomes! Here is a link to the repo",
+      text: "Right now, I'm working on a GitHub gamification inspired tracking app. Currently I'm learning how to use sequilise to set up the database! So far it's named Square Life. If you have ANY better suggestions please let mw know! The idea is a daily log a certain task. The more you do that task the more pronounced the square for that day becomes!",
       link: "https://github.com/niccmac/squareLife",
       accordian: <Image src="slwireframe.png" alt="Wireframe" />,
     },
@@ -55,7 +55,7 @@ export default function Projects() {
     {
       sid: 4,
       project: "Memory Game",
-      text: "This was a fun little memory card game I created to learn more about React. Turning the cards and keeping track of matched cards helped me learn useContext and gave me another chance to work on using providers. Managing the useState was complex at first, and makes me truly appreciate the hard work that goes into even the simplist of features!",
+      text: "This was a fun little memory card game I created to learn more about React. Turning the cards and keeping track of matched cards helped me learn useContext and gave me another chance to work on using providers. Managing state was complex at first, and makes me truly appreciate the hard work that goes into even the simplist of features!",
       link: "https://github.com/niccmac/calculator/tree/main/src/components",
       accordian: (
         <GameProvider>
@@ -91,21 +91,23 @@ export default function Projects() {
         <Flex bg="transparent">
           <Flex overflow="scroll" pos="relative" className="project-box">
             <Flex h="full" w="full" {...carouselStyle}>
-              <Box key={`slide-1`} boxSize="full" flex="none" align="center">
-                <Text color="brand.800" fontSize="xs" p="8px 12px">
-                  {1} / {slidesCount + 1}
-                </Text>
-
+              <Box boxSize="full" flex="none" align="center" padding={4}>
                 <Container
-                  paddingTop={10}
+                  // paddingTop={10}
                   flexDirection="column"
                   align="left"
                   margin={1}
                   backgroundColor="brand.600"
-                  h="100%"
+                  h="95%"
                   w="80%"
                   m={10}
+                  style={{
+                    boxShadow: "10px 10px  #eee5e9",
+                  }}
                 >
+                  {/* <Text color="brand.800" fontSize="xs" p="8px 12px">
+                    {1} / {slidesCount + 1} */}
+                  {/* </Text> */}
                   <Text fontSize="3xl" w="100%">
                     Projects
                   </Text>
@@ -114,10 +116,15 @@ export default function Projects() {
                 </Container>
               </Box>
               {slides.map((slide) => (
-                <Box key={`slide-${slide.sid}`} boxSize="full" flex="none">
-                  <Text color="brand.800" fontSize="xs" p="8px 12px">
+                <Box
+                  key={`slide-${slide.sid}`}
+                  boxSize="full"
+                  flex="none"
+                  padding={4}
+                >
+                  {/* <Text color="brand.800" fontSize="xs" p="8px 12px">
                     {slide.sid} / {slidesCount + 1}
-                  </Text>
+                  </Text> */}
 
                   <Container
                     flexDirection="column"
@@ -129,6 +136,9 @@ export default function Projects() {
                     backgroundColor="brand.600"
                     // marginBottom={10}
                     paddingBottom={10}
+                    style={{
+                      boxShadow: "10px 10px  #eee5e9",
+                    }}
                   >
                     <Container
                       paddingTop={10}
@@ -146,7 +156,7 @@ export default function Projects() {
                         </a>
                       </Text>
                       <Divider />
-                      <Text fontSize="sm"> {slide.text}.</Text>
+                      <Text fontSize="sm"> {slide.text}</Text>
                     </Container>
 
                     {slide.accordian}
@@ -164,7 +174,7 @@ export default function Projects() {
         </Flex>
       </Container>
       <Container w="full">
-        <HStack justifyContent="center">
+        <HStack justifyContent="center" margin={4}>
           {Array.from({
             length: slidesCount + 1,
           }).map((_, slide) => (

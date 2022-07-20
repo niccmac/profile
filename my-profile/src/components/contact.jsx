@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { FaGitSquare, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
+import { IoIosCopy } from "react-icons/io";
 
 // TODO alert to notification
 
@@ -26,7 +27,6 @@ export default function Contact() {
 
     toast({
       title: "Copied.",
-      icon: "IoIosCopy",
       description: "Email copied to clipboard.",
       status: "success",
       duration: 1000,

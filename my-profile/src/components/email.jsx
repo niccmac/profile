@@ -13,6 +13,12 @@ import {
   Container,
   Text,
   Divider,
+  useToast,
+  SimpleGrid,
+  Box,
+  Center,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import { useState } from "react";
 // Send button colours
@@ -20,14 +26,18 @@ import { useState } from "react";
 // TODO fix divider full width
 export default function Email() {
   const form = useRef();
-  const [visible, setVisable] = useState(false);
-  const title = "Email sent!";
-  const message = "I'll get back to you as soon as possible!";
 
-  if (visible) {
-    setTimeout(() => {
-      setVisable(false);
-    }, 3000);
+  const toast = useToast();
+  // Clipboards email
+  function alertToast() {
+    toast({
+      title: "Email sent!",
+      description: "I'll get back to you as soon as possible!",
+      status: "success",
+      duration: 1000,
+      isClosable: true,
+      position: "top",
+    });
   }
   const sendEmail = (e) => {
     e.preventDefault();
@@ -41,7 +51,7 @@ export default function Email() {
       .then(
         (result) => {
           console.log(result.text);
-          setVisable(true);
+          alertToast();
 
           e.target.reset();
         },
@@ -52,75 +62,105 @@ export default function Email() {
   };
 
   return (
-    <>
-      {visible ? (
-        <Alert
-          colorScheme="brand.900"
-          color="brand.800"
-          status="success"
-          variant="subtle"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          textAlign="center"
-          height="200px"
-        >
-          <AlertIcon boxSize="40px" mr={0} />
-          <AlertTitle mt={4} mb={1} fontSize="lg">
-            {title}
-          </AlertTitle>
-          <AlertDescription maxWidth="sm">{message}</AlertDescription>
-        </Alert>
-      ) : null}
-      <Container></Container>
-    </>
+    <SimpleGrid
+      columns={1}
+      backgroundColor="brand.600"
+      // justifyContent="center"
+      w="70%"
+    >
+      <Box colSpan={1} style={{ boxShadow: "10px 10px #eee5e9" }}>
+        <Center flexDirection="column">
+          <Container
+            flexDirection="column"
+            align="left"
+            margin={1}
+            maxWidth="100%"
+          >
+            <Text fontSize="xl" w="100%">
+              Contact
+            </Text>
+            <Divider />
+            <Text fontSize="sm">Send me an email.</Text>
+          </Container>
+          <Container flexDirection="column" margin={1} maxWidth="100%">
+            <form ref={form} onSubmit={sendEmail}>
+              <Grid
+                h="200px"
+                templateRows="repeat(2, 1fr)"
+                templateColumns="repeat(4, 1fr)"
+                gap={4}
+              >
+                <GridItem
+                  rowSpan={2}
+                  colSpan={3}
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Textarea
+                    placeholder="Write your message here!"
+                    color="brand.800"
+                    colorScheme="brand.900"
+                    focusBorderColor="brand.800"
+                    errorBorderColor="red.500"
+                    isRequired
+                    name="message"
+                    h="80%"
+                  />
+                </GridItem>
+                <GridItem
+                  rowSpan={2}
+                  colSpan={1}
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  paddingBottom={10}
+                >
+                  <Input
+                    placeholder="Your name"
+                    color="brand.900"
+                    colorScheme="brand.900"
+                    focusBorderColor="brand.900"
+                    errorBorderColor="red.500"
+                    isRequired
+                    name="name"
+                  />
+                  <Input
+                    placeholder="Your email"
+                    colorScheme="brand.800"
+                    focusBorderColor="brand.800"
+                    errorBorderColor="red.500"
+                    isRequired
+                    name="email"
+                  />
+                  <span>
+                    <Button
+                      colorScheme="brand.800"
+                      borderColor="brand.800"
+                      variant="outline"
+                      type="submit"
+                      value="Submit"
+                      size="sm"
+                    >
+                      Send!
+                    </Button>
+                  </span>
+                </GridItem>
+                {/* <GridItem rowSpan={2} colSpan={1} bg="tomato" /> */}
+              </Grid>
+            </form>
+          </Container>
+        </Center>
+      </Box>
+    </SimpleGrid>
   );
-}
-{
+
   /* <Text alignItems="flex-start" fontSize="xl">
 Email
 </Text>
 <Divider />
-<form ref={form} onSubmit={sendEmail}>
-<Stack direction="column" spacing={4} align="center" padding={5}>
-  <Input
-    placeholder="Your name"
-    color="brand.800"
-    colorScheme="brand.900"
-    focusBorderColor="brand.800"
-    errorBorderColor="red.500"
-    isRequired
-    name="name"
-  />
-  <Input
-    placeholder="Your email"
-    colorScheme="brand.800"
-    focusBorderColor="brand.800"
-    errorBorderColor="red.500"
-    isRequired
-    name="email"
-  />
-  <Textarea
-    placeholder="Write your message here!"
-    color="brand.800"
-    colorScheme="brand.900"
-    focusBorderColor="brand.800"
-    errorBorderColor="red.500"
-    isRequired
-    name="message"
-  />
 
-  <span>
-    <Button
-      colorScheme="brand.900"
-      variant="outline"
-      type="submit"
-      value="Submit"
-      size="sm"
-    >
-      Send!
-    </Button>
-  </span>
-</Stack>
 </form> */
 }

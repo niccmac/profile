@@ -130,7 +130,12 @@ export default function Skills() {
       // justifyContent="center"
       w="70%"
     >
-      <Box colSpan={1}>
+      <Box
+        colSpan={1}
+        style={{
+          boxShadow: "10px 10px  #eee5e9",
+        }}
+      >
         <Center flexDirection="column">
           <Container
             flexDirection="column"

@@ -35,7 +35,9 @@ function App() {
         marginBottom="200px"
       >
         <Projects />
+
         <Skills />
+        <br />
         <Email />
       </Flex>
       <div className="contact">
