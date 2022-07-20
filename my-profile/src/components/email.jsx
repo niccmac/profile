@@ -72,61 +72,55 @@ export default function Email() {
           <AlertDescription maxWidth="sm">{message}</AlertDescription>
         </Alert>
       ) : null}
-      <Container
-        bg="brand.600"
-        display="flex"
-        flexDirection="column"
-        justifyContent="space-between"
-        marginTop={10}
-        w="100%"
-      >
-        <Text alignItems="flex-start" fontSize="xl">
-          Email
-        </Text>
-        <Divider />
-        <form ref={form} onSubmit={sendEmail}>
-          <Stack direction="column" spacing={4} align="center" padding={5}>
-            <Input
-              placeholder="Your name"
-              color="brand.800"
-              colorScheme="brand.900"
-              focusBorderColor="brand.800"
-              errorBorderColor="red.500"
-              isRequired
-              name="name"
-            />
-            <Input
-              placeholder="Your email"
-              colorScheme="brand.800"
-              focusBorderColor="brand.800"
-              errorBorderColor="red.500"
-              isRequired
-              name="email"
-            />
-            <Textarea
-              placeholder="Write your message here!"
-              color="brand.800"
-              colorScheme="brand.900"
-              focusBorderColor="brand.800"
-              errorBorderColor="red.500"
-              isRequired
-              name="message"
-            />
-
-            <span>
-              <Button
-                colorScheme="brand.900"
-                variant="outline"
-                type="submit"
-                value="Submit"
-                size="sm"
-              >
-                Send!
-              </Button>
-            </span>
-          </Stack>
-        </form>
-      </Container>
+      <Container></Container>
     </>
   );
+}
+{
+  /* <Text alignItems="flex-start" fontSize="xl">
+Email
+</Text>
+<Divider />
+<form ref={form} onSubmit={sendEmail}>
+<Stack direction="column" spacing={4} align="center" padding={5}>
+  <Input
+    placeholder="Your name"
+    color="brand.800"
+    colorScheme="brand.900"
+    focusBorderColor="brand.800"
+    errorBorderColor="red.500"
+    isRequired
+    name="name"
+  />
+  <Input
+    placeholder="Your email"
+    colorScheme="brand.800"
+    focusBorderColor="brand.800"
+    errorBorderColor="red.500"
+    isRequired
+    name="email"
+  />
+  <Textarea
+    placeholder="Write your message here!"
+    color="brand.800"
+    colorScheme="brand.900"
+    focusBorderColor="brand.800"
+    errorBorderColor="red.500"
+    isRequired
+    name="message"
+  />
+
+  <span>
+    <Button
+      colorScheme="brand.900"
+      variant="outline"
+      type="submit"
+      value="Submit"
+      size="sm"
+    >
+      Send!
+    </Button>
+  </span>
+</Stack>
+</form> */
 }

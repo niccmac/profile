@@ -35,7 +35,7 @@ export default function Projects() {
     {
       sid: 2,
       project: "Focal",
-      text: "This is project management app, a group project that I worked on during my diploma in Web Development at Lighthouse Labs and was created in two weeks. Focal has plenty of exciting features to explore, take a look at the video below to have a full walkthrough of all of them.",
+      text: `This is project management app. It took two weeks to create as a group during my Web Development diploma at Lighthouse Labs. Focal has plenty of exciting features to explore, take a look at the video below to have a full walkthrough of all of them.`,
       link: "https://www.focal-project.ca/",
       accordian: (
         <video className="project-video" width="auto" height="auto" controls>

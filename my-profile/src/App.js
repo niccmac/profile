@@ -36,9 +36,11 @@ function App() {
       >
         <Projects />
         <Skills />
+        <Email />
       </Flex>
-
-      <Contact />
+      <div className="contact">
+        <Contact />
+      </div>
     </div>
   );
 }

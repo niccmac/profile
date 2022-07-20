@@ -1,6 +1,8 @@
 import ProfileAvatar from "./avatar";
+import Contact from "./contact";
 
 import { Text, Divider, Flex, Container } from "@chakra-ui/react";
+
 export default function Profile() {
   return (
     <div className="profile">

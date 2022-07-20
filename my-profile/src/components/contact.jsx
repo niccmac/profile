@@ -1,22 +1,41 @@
-import { Box, AlertDialog, useDisclosure } from "@chakra-ui/react";
-import { useRef } from "react";
+import {
+  Box,
+  AlertDialog,
+  useDisclosure,
+  AlertDialogOverlay,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  Button,
+  AlertDialogBody,
+  useToast,
+} from "@chakra-ui/react";
+import { useRef, useState } from "react";
 import { FaGitSquare, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
 
 // TODO alert to notification
 
 import { MdEmail } from "react-icons/md";
-import AlertDialogExample from "./alert";
+
 export default function Contact() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const cancelRef = useRef();
+  const toast = useToast();
   // Clipboards email
   function copy() {
     var copyText = "nicole.mac0404@gmail.com";
     navigator.clipboard.writeText(copyText);
-    onOpen();
+
+    toast({
+      title: "Copied.",
+      icon: "IoIosCopy",
+      description: "Email copied to clipboard.",
+      status: "success",
+      duration: 1000,
+      isClosable: true,
+      position: "top",
+    });
   }
   return (
-    <div className="contact">
+    <div>
       <Box
         display="flex"
         justifyContent="space-evenly"
@@ -39,13 +58,6 @@ export default function Contact() {
 
         <MdEmail size="45" onClick={copy} />
       </Box>
-      <AlertDialog
-        isOpen={isOpen}
-        leastDestructiveRef={cancelRef}
-        onClose={onClose}
-      >
-        <AlertDialogExample></AlertDialogExample>
-      </AlertDialog>
     </div>
   );
 }
