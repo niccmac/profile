@@ -22,6 +22,7 @@ import {
   HStack,
   Icon,
 } from "@chakra-ui/react";
+import Work from "./components/work";
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
         <Projects />
 
         <Skills />
+        <br />
+        <Work />
         <br />
         <Email />
       </Flex>
