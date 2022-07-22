@@ -164,7 +164,7 @@ export default function Projects() {
                       align="left"
                       margin={1}
                       backgroundColor="brand.600"
-                      h="50%"
+                      h="45%"
                       w="80%"
                       m={10}
                     >

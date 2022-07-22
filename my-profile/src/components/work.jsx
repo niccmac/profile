@@ -209,7 +209,7 @@ export default function Work() {
             <Divider />
             <Text fontSize="sm">Previous roles.</Text>
           </Container>
-          {/* <Stack flexDirection="column" margin={1} maxWidth="100%"> */}
+
           <Stack className="jobs" w="100%" padding={4}>
             <Accordion allowToggle>
               {jobs.map((job) => {

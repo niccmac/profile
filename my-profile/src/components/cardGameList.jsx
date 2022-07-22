@@ -45,6 +45,7 @@ const CardList = () => {
             className="card-game"
             templateRows="repeat(2, 1fr)"
             templateColumns="repeat(4, 1fr)"
+            justifyItems="center"
             gap={4}
             spacing={{ xs: 2, md: 3 }}
             columns={16}
@@ -52,7 +53,7 @@ const CardList = () => {
             {cards.map((card) => {
               return (
                 <GridItem md={4} key={card.id}>
-                  <Box>
+                  <Box alignItems="center">
                     <FontAwesomeIcon
                       key={card}
                       size="lg"

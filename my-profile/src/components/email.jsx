@@ -82,7 +82,7 @@ export default function Email() {
             <Divider />
             <Text fontSize="sm">Send me an email.</Text>
           </Container>
-          <Container flexDirection="column" margin={1} maxWidth="100%">
+          <Container flexDirection="column" marginTop={5} maxWidth="100%">
             <form ref={form} onSubmit={sendEmail}>
               <Grid
                 h="200px"
@@ -148,7 +148,6 @@ export default function Email() {
                     </Button>
                   </span>
                 </GridItem>
-                {/* <GridItem rowSpan={2} colSpan={1} bg="tomato" /> */}
               </Grid>
             </form>
           </Container>
@@ -156,11 +155,4 @@ export default function Email() {
       </Box>
     </SimpleGrid>
   );
-
-  /* <Text alignItems="flex-start" fontSize="xl">
-Email
-</Text>
-<Divider />
-
-</form> */
 }

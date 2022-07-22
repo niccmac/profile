@@ -10,6 +10,7 @@ import {
   AlertDialogBody,
   useToast,
 } from "@chakra-ui/react";
+
 import { useRef, useState } from "react";
 import { FaGitSquare, FaLinkedin, FaRegFileAlt } from "react-icons/fa";
 import { IoIosCopy } from "react-icons/io";
@@ -34,6 +35,24 @@ export default function Contact() {
       position: "top",
     });
   }
+
+  const contacts = [
+    {
+      title: "Open my GitHub",
+      link: "https://github.com/niccmac",
+      icon: <FaGitSquare size="45" color="#2D4739" />,
+    },
+    {
+      title: "Open my LinkedIn",
+      link: "https://www.linkedin.com/in/nicole-maclean/",
+      icon: <FaLinkedin size="45" color="#2D4739" />,
+    },
+    {
+      title: "Open my resume",
+      link: "https://www.cakeresume.com/s--JTk4kmJ9lt80lFKgKeCDZg--/nicole-maclean",
+      icon: <FaRegFileAlt size="40" color="#2D4739" />,
+    },
+  ];
   return (
     <div>
       <Box
@@ -43,20 +62,19 @@ export default function Contact() {
         backgroundColor="brand.600"
         padding={4}
       >
-        <a href="https://github.com/niccmac" target="blank">
-          <FaGitSquare size="45" />
-        </a>
-        <a href="https://www.linkedin.com/in/nicole-maclean/" target="blank">
-          <FaLinkedin size="45" />
-        </a>
-        <a
-          href="https://www.cakeresume.com/s--JTk4kmJ9lt80lFKgKeCDZg--/nicole-maclean"
-          target="blank"
-        >
-          <FaRegFileAlt size="40" />
-        </a>
+        {contacts.map((contact) => {
+          return (
+            <div title={contact.title}>
+              <a href={contact.link} target="blank">
+                {contact.icon}
+              </a>
+            </div>
+          );
+        })}
 
-        <MdEmail size="45" onClick={copy} />
+        <div title="Copy my email to your clipboard">
+          <MdEmail size="45" onClick={copy} color="#2D4739" />
+        </div>
       </Box>
     </div>
   );
