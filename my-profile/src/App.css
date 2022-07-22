@@ -56,12 +56,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* /* min-width: 90%;
-  min-height: 90%; 
-  background-image: radial-gradient(#000 15%, transparent 10%);
-  background-size: 10px 10px;
-  background-color: #b68f40;
-  margin-bottom: 10%; */
 }
 
 .contact {
@@ -83,21 +77,14 @@
 }
 
 .projects {
-  /* position: absolute;  */
-  /* height: 100%; */
   display: flex;
   justify-self: center;
   flex-direction: column;
   overflow: scroll;
   justify-content: center;
-  /* height: 100vh; */
-  /* width: 100vw; */
-  /* width: 75%;
-  height: 75%; */
-  margin-top: 10%;
+  width: 100vw;
 
-  /* margin-left: 7%;
-  margin-left: 7%; */
+  margin-top: 10%;
 }
 .avatar {
   vertical-align: middle;

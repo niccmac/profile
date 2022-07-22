@@ -8,6 +8,7 @@ import {
   Box,
   Flex,
   HStack,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import GameProvider from "../providers/cardProvider";
 import CardGame from "./cardGame";
@@ -86,8 +87,8 @@ export default function Projects() {
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
   const slidesCount = slides.length;
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount + 1 : s - 1));
@@ -102,19 +103,18 @@ export default function Projects() {
   };
 
   const carouselStyle = {
-    transition: "all .5s",
+    transition: "all 1.2s",
     ml: `-${currentSlide * 100}%`,
   };
 
   return (
     <div className="projects">
-      <Container>
-        <Flex bg="transparent">
-          <Flex overflow="scroll" pos="relative" className="project-box">
-            <Flex h="full" w="full" {...carouselStyle}>
+      <Container w="full" className="wholecontainer" margin={10}>
+        <Flex bg="transparent" w="90vw" className="113">
+          <Flex pos="relative" className="114">
+            <Flex h="full" w="90vw" {...carouselStyle} className="115">
               <Box boxSize="full" flex="none" align="center" padding={4}>
                 <Container
-                  // paddingTop={10}
                   flexDirection="column"
                   align="left"
                   backgroundColor="brand.600"
@@ -125,9 +125,6 @@ export default function Projects() {
                     boxShadow: "10px 10px  #2D4739",
                   }}
                 >
-                  {/* <Text color="brand.800" fontSize="xs" p="8px 12px">
-                    {1} / {slidesCount + 1} */}
-                  {/* </Text> */}
                   <Text fontSize="3xl" w="100%">
                     Projects
                   </Text>
@@ -136,50 +133,50 @@ export default function Projects() {
                 </Container>
               </Box>
               {slides.map((slide) => (
-                <Box
-                  key={`slide-${slide.sid}`}
-                  boxSize="full"
-                  flex="none"
-                  padding={4}
-                >
-                  {/* <Text color="brand.800" fontSize="xs" p="8px 12px">
-                    {slide.sid} / {slidesCount + 1}
-                  </Text> */}
-
-                  <Container
-                    flexDirection="column"
-                    align="left"
-                    // margin={1}
-                    backgroundColor="brand.600"
-                    h="95%"
-                    w="80%"
-                    m={10}
-                    style={{
-                      boxShadow: "10px 10px  #2D4739",
-                    }}
+                <>
+                  <Box
+                    key={`slide-${slide.sid}`}
+                    align="center"
+                    boxSize="full"
+                    flex="none"
+                    padding={4}
                   >
                     <Container
-                      paddingTop={10}
                       flexDirection="column"
                       align="left"
-                      margin={1}
+                      justifyContent="center"
                       backgroundColor="brand.600"
-                      h="45%"
+                      h="95%"
                       w="80%"
                       m={10}
+                      style={{
+                        boxShadow: "10px 10px  #2D4739",
+                      }}
                     >
-                      <Text fontSize="3xl" w="100%">
-                        <a href={slide.link} target="	_blank">
-                          {slide.project}
-                        </a>
-                      </Text>
-                      <Divider />
-                      <Text fontSize="sm"> {slide.text}</Text>
-                    </Container>
+                      <Container
+                        paddingTop={10}
+                        flexDirection="column"
+                        align="left"
+                        margin={1}
+                        backgroundColor="brand.600"
+                        h="35%"
+                        w="80%"
+                        m={10}
+                        // overflow="scroll"
+                      >
+                        <Text fontSize="3xl" w="100%">
+                          <a href={slide.link} target="	_blank">
+                            {slide.project}
+                          </a>
+                        </Text>
+                        <Divider />
+                        <Text fontSize="sm"> {slide.text}</Text>
+                      </Container>
 
-                    {slide.accordian}
-                  </Container>
-                </Box>
+                      {slide.accordian}
+                    </Container>
+                  </Box>
+                </>
               ))}
             </Flex>
             <Text {...arrowStyles} left="0" onClick={prevSlide}>
@@ -191,7 +188,7 @@ export default function Projects() {
           </Flex>
         </Flex>
       </Container>
-      <Container w="full">
+      <Container w="full" className="check-width">
         <HStack justifyContent="center" margin={4}>
           {Array.from({
             length: slidesCount + 1,

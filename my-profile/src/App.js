@@ -49,7 +49,7 @@ function App() {
           marginTop="100px"
         >
           <Projects />
-
+          <br />
           <Skills />
           <br />
           <Work />
