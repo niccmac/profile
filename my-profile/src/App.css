@@ -38,7 +38,7 @@
   background-image: radial-gradient(#000 15%, transparent 10%);
   background-size: 10px 10px;
   background-color: #b68f40;
-  /* background-color: #d7ccc8; */
+  color: #eee5e9;
 }
 
 .main-container {
@@ -101,4 +101,9 @@
 }
 .avatar {
   vertical-align: middle;
+}
+
+.job-description {
+  padding-left: 50px;
+  padding-right: 50px;
 }

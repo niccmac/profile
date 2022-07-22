@@ -15,7 +15,7 @@ export default function Profile() {
         minWidth="max-content"
         alignItems="center"
         style={{
-          boxShadow: "10px 10px  #eee5e9",
+          boxShadow: "10px 10px #2D4739",
         }}
       >
         <Container

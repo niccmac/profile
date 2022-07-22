@@ -195,7 +195,7 @@ export default function Work() {
       // justifyContent="center"
       w="70%"
     >
-      <Box colSpan={1} style={{ boxShadow: "10px 10px #eee5e9" }}>
+      <Box colSpan={1} style={{ boxShadow: "10px 10px #2D4739" }}>
         <Center flexDirection="column">
           <Container
             flexDirection="column"
@@ -215,22 +215,30 @@ export default function Work() {
               {jobs.map((job) => {
                 return (
                   <div key={job.company}>
-                    <AccordionItem>
+                    <AccordionItem border="transparent">
                       <AccordionButton>
                         <AccordionIcon /> {"   "}
-                        {job.role}, {job.company.toUpperCase()} - {job.timeline}
+                        {job.role}
                       </AccordionButton>
-                      <AccordionPanel>
-                        <div align="left">{job.description}</div>
-                        <a href={job.link} target="blank">
-                          <img
-                            color="red"
-                            src={job.icon}
-                            alt="still"
-                            width="50"
-                            height="50"
-                          />
-                        </a>
+                      <AccordionPanel margin={10}>
+                        <div align="center">
+                          <a href={job.link} target="blank">
+                            <img
+                              color="red"
+                              src={job.icon}
+                              alt="still"
+                              width="50"
+                              height="50"
+                            />
+                          </a>
+                          <p>
+                            {job.company.toUpperCase()} <br /> {job.timeline}{" "}
+                          </p>
+                        </div>
+
+                        <p className="job-description" align="left">
+                          {job.description}
+                        </p>
                       </AccordionPanel>
                     </AccordionItem>
                   </div>

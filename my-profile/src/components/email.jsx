@@ -68,7 +68,7 @@ export default function Email() {
       // justifyContent="center"
       w="70%"
     >
-      <Box colSpan={1} style={{ boxShadow: "10px 10px #eee5e9" }}>
+      <Box colSpan={1} style={{ boxShadow: "10px 10px  #2D4739" }}>
         <Center flexDirection="column">
           <Container
             flexDirection="column"

@@ -35,7 +35,7 @@ export default function Projects() {
     {
       sid: 2,
       project: "Focal",
-      text: `This is project management app. It took two weeks to create as a group during my Web Development diploma at Lighthouse Labs. Focal has plenty of exciting features to explore, take a look at the video below to have a full walkthrough of them all.`,
+      text: `This is a project management app. It took two weeks to create as a group during my Web Development diploma at Lighthouse Labs. Focal has plenty of exciting features to explore, take a look at the video below to have a full walkthrough of them all.`,
       link: "https://www.focal-project.ca/",
       accordian: (
         <video className="project-video" width="auto" height="auto" controls>
@@ -47,7 +47,7 @@ export default function Projects() {
     {
       sid: 3,
       project: "Square Life",
-      text: "Right now, I'm working on a GitHub gamification inspired tracking app. Currently I'm learning how to use sequilise to set up the database! So far it's named Square Life. If you have ANY better suggestions please let mw know! The idea is a daily log a certain task. The more you do that task the more pronounced the square for that day becomes!",
+      text: "Right now, I'm working on a GitHub gamification-inspired tracking app. Currently, I'm learning how to use sequilise to set up the database! So far it's named Square Life. If you have ANY better suggestions please let me know! The idea is a daily log of certain tasks. The more you do that task the more pronounced the square for that day becomes!",
       link: "https://github.com/niccmac/squareLife",
       accordian: <Image src="slwireframe.png" alt="Wireframe" />,
     },
@@ -55,13 +55,34 @@ export default function Projects() {
     {
       sid: 4,
       project: "Memory Game",
-      text: "This was a fun little memory card game I created to learn more about React. Turning the cards and keeping track of matched cards helped me learn useContext and gave me another chance to work on using providers. Managing state was complex at first, and makes me truly appreciate the hard work that goes into even the simplist of features!",
+      text: "This was a fun little memory card game I created to learn more about React. Turning the cards and keeping track of matched cards helped me learn useContext and gave me another chance to work on using providers. Managing the state was complex at first, and makes me truly appreciate the hard work that goes into even the simple of features!",
       link: "https://github.com/niccmac/calculator/tree/main/src/components",
       accordian: (
         <GameProvider>
           <CardGame></CardGame>
         </GameProvider>
       ),
+    },
+    {
+      sid: 5,
+      project: "Maps",
+      text: "This project allows a user to create lists of their favourite spots. It uses Node, Postgres, JQuery, EJS and an external API for maps.",
+      link: "https://github.com/ralphunrau/maps_midterm",
+      accordian: <Image src="ezgif.com-gif-maker.gif" alt="mapsgif" />,
+    },
+    {
+      sid: 6,
+      project: "Scheduler",
+      text: "This was a great project where I first learnt to use React. Its an app where users can book, edit and cancel appointments. It uses Express REST API routes and a Postgres backend. SPA.",
+      link: "https://github.com/niccmac/scheduler",
+      accordian: <Image src="schedulerGIF.gif" alt="mapsgif" />,
+    },
+    {
+      sid: 7,
+      project: "Tweeter",
+      text: "This was a great project where I first learnt to use React. Its an app where users can book, edit and cancel appointments. It uses Express REST API routes and a Postgres backend. SPA.",
+      link: "https://github.com/niccmac/scheduler",
+      accordian: <Image src="tweeterGIF.gif" alt="mapsgif" />,
     },
   ];
 
@@ -96,13 +117,12 @@ export default function Projects() {
                   // paddingTop={10}
                   flexDirection="column"
                   align="left"
-                  margin={1}
                   backgroundColor="brand.600"
                   h="95%"
                   w="80%"
                   m={10}
                   style={{
-                    boxShadow: "10px 10px  #eee5e9",
+                    boxShadow: "10px 10px  #2D4739",
                   }}
                 >
                   {/* <Text color="brand.800" fontSize="xs" p="8px 12px">
@@ -128,16 +148,14 @@ export default function Projects() {
 
                   <Container
                     flexDirection="column"
-                    h="100%"
-                    w="80%"
-                    display="flex"
-                    // justifyContent="space-evenly"
-                    alignItems="center"
+                    align="left"
+                    // margin={1}
                     backgroundColor="brand.600"
-                    // marginBottom={10}
-                    paddingBottom={10}
+                    h="95%"
+                    w="80%"
+                    m={10}
                     style={{
-                      boxShadow: "10px 10px  #eee5e9",
+                      boxShadow: "10px 10px  #2D4739",
                     }}
                   >
                     <Container
@@ -146,7 +164,7 @@ export default function Projects() {
                       align="left"
                       margin={1}
                       backgroundColor="brand.600"
-                      h="100%"
+                      h="50%"
                       w="80%"
                       m={10}
                     >

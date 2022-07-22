@@ -133,7 +133,7 @@ export default function Skills() {
       <Box
         colSpan={1}
         style={{
-          boxShadow: "10px 10px  #eee5e9",
+          boxShadow: "10px 10px  #2D4739",
         }}
       >
         <Center flexDirection="column">

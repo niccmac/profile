@@ -28,12 +28,14 @@ function App() {
   return (
     <div className="App">
       <Profile />
+
       <Flex
         padding={4}
         minWidth="max-content"
         alignItems="center"
         flexDirection="column"
         marginBottom="200px"
+        marginTop="100px"
       >
         <Projects />
 
